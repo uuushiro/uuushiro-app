@@ -13,7 +13,7 @@ type Query {
 }
 
 type Mutation {
-  saveUser(user: CreateUserDTO!): User
+  createUser(user: CreateUserDTO!): User
 }
 
 input CreateUserDTO {

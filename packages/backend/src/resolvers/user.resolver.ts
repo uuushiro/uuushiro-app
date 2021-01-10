@@ -15,7 +15,7 @@ export class UserResolver {
   }
 
   @Mutation((returns) => User, { nullable: true })
-  async saveUser(@Args("user") user: CreateUserDTO) {
+  async createUser(@Args("user") user: CreateUserDTO) {
     return await this.userService.register(user);
   }
 }
