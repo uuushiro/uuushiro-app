@@ -17,6 +17,11 @@ export class UsersService {
     return crypto.createHash('sha256').update(SALT + '/' + password).digest('hex');
   }
 
+  async findUserById(id: number): Promise<User> {
+    const user = await this.userRepository.findOne( { where: { id } });
+    return user;
+  }
+
   async findUserByName(firstName: string, lastName: string): Promise<boolean> {
     const user = await this.userRepository.findOne({ where: { firstName, lastName } });
     return !!user;

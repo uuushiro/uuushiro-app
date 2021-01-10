@@ -4,9 +4,13 @@ import { UsersController } from '../controllers/users.controller';
 import { UsersService } from '../services/users.service';
 import { UsersModule } from '../modules/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { GraphQLModule } from '@nestjs/graphql';
 
 @Module({
   imports: [
+    GraphQLModule.forRoot({
+      autoSchemaFile: "schema.graphql",
+    }),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
