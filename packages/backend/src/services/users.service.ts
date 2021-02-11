@@ -27,6 +27,11 @@ export class UsersService {
     return !!user;
   }
 
+  async findAll() {
+    const users = await this.userRepository.find();
+    return users;
+  }
+
   async register(userData: Partial<User>): Promise<void> {
     if (await this.findUserByName(userData.firstName, userData.lastName)) {
       return Promise.reject(new Error('User is already taken.'))

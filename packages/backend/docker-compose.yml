@@ -15,7 +15,7 @@ services:
       MYSQL_ROOT_PASSWORD: password
 
   # apt update
-  # apt install mysql-client
+  # apt install mysql-client -y
   # mysql -uroot -hdb -ppassword でログインできる
   shell:
     image: debian:stretch
